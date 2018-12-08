@@ -15,8 +15,6 @@ oldXAccRawValue = 0
 oldYAccRawValue = 0
 oldZAccRawValue = 0
 
-a = datetime.datetime.now()
-
 #Setup the tables for the mdeian filter. Fill them all with '1' soe we dont get devide by zero error 
 acc_medianTable1X = [1] * ACC_MEDIANTABLESIZE
 acc_medianTable1Y = [1] * ACC_MEDIANTABLESIZE
@@ -36,13 +34,6 @@ def readBerry():
     ACCx = IMU.readACCx()
     ACCy = IMU.readACCy()
     ACCz = IMU.readACCz()
- 
-
-    ##Calculate loop Period(LP). How long between Gyro Reads
-    b = datetime.datetime.now() - a
-    a = datetime.datetime.now()
-    LP = b.microseconds/(1000000*1.0)
-    print("Loop Time | %5.2f|" % LP)
 
     ############################################### 
     #### Apply low pass filter ####
