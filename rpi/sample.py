@@ -41,7 +41,7 @@ while True:
 	# print(float(hexStrToInt(trimmedString[0:5]))/100),
 	# print(float(hexStrToInt(trimmedString[6:11]))/100),
 	# print(float(hexStrToInt(trimmedString[12:17]))/100)
-	sleep(1)
+	time.sleep(1)
 	
 
 # Gyroscope
