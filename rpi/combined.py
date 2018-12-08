@@ -1,9 +1,11 @@
+#!/usr/bin/python3
 # Using Hexiwear with Python
 import pexpect
 import time
 import socket
-import berry.py
+import string
 
+exec(open("berry.py").read())
 DEVICE = "00:2E:40:08:00:31"
 UDP_IP = "192.168.0.36"
 UDP_PORT = 12345
@@ -67,6 +69,6 @@ while True:
 	z = float(hexStrToInt(trimmedString[12:17]))/1000
 	message = "Accel: %.3f, %.3f, %.3f" % (x,y,z)
 	dir = computeDirection(x,y)
-	sock.send(dir.encode('utf-8'))
+	#sock.send(dir.encode('utf-8'))
 	print(message)
 	print("Direction: %s" % dir)
