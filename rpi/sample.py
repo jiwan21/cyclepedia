@@ -31,24 +31,18 @@ def hexStrToInt(hexstr):
 
 
 while True:
-	child.sendline("char-read-hnd 0x30")
-	child.expect("Characteristic value/descriptor: ", timeout=10)
+	#Accelerometer
+	child.sendline("char-read-uuid 0x2001")
+	child.expect("handle: ", timeout=10)
 	child.expect("\r\n", timeout=10)
+	trimmedString = child.before
 	print("Accel: "),
-	print(child.before),
-	print(float(hexStrToInt(child.before[0:5])) / 100),
-	print(float(hexStrToInt(child.before[6:11])) / 100),
-	print(float(hexStrToInt(child.before[12:17]))/100)
-	# Accelerometer
-# child.sendline("char-read-uuid 0x2001")
-# child.expect("handle: ", timeout=10)
-# child.expect("\r\n", timeout=10)
-# trimmedString = child.before
-# print("Accel: "),
-# print(trimmedString),
-#print(float(hexStrToInt(trimmedString[0:5]))/100),
-#print(float(hexStrToInt(trimmedString[6:11]))/100),
-#print(float(hexStrToInt(trimmedString[12:17]))/100)
+	print(trimmedString)
+	# print(float(hexStrToInt(trimmedString[0:5]))/100),
+	# print(float(hexStrToInt(trimmedString[6:11]))/100),
+	# print(float(hexStrToInt(trimmedString[12:17]))/100)
+	sleep(1)
+	
 
 # Gyroscope
 child.sendline("char-read-uuid 0x2002")
