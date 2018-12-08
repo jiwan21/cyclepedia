@@ -1,8 +1,8 @@
-# Using Hexiwear with Python
+\# Using Hexiwear with Python
 import pexpect
 import time
 
-DEVICE = "00:35:40:08:00:48"
+DEVICE = "00:2E:40:08:00:31"
 
 print("Hexiwear address:"),
 print(DEVICE)
@@ -15,7 +15,7 @@ child = pexpect.spawn("gatttool -I")
 # Connect to the device.
 print("Connecting to "),
 print(DEVICE)
-con = "connect 00:35:40:08:00:48"
+con = "connect 00:2E:40:08:00:31"
 child.sendline(con)
 child.expect("Connection successful", timeout=5)
 print(" Connected!")
@@ -30,39 +30,39 @@ def hexStrToInt(hexstr):
     return val
 
 
-# while True:
-# Accelerometer
-child.sendline("char-read-uuid 0x2001")
-child.expect("handle: ", timeout=10)
-child.expect("\r\n", timeout=10)
-trimmedString = child.before[child.before.find(":")+2:]
-print("Accel: "),
-print(trimmedString),
-print(float(hexStrToInt(trimmedString[0:5]))/100),
-print(float(hexStrToInt(trimmedString[6:11]))/100),
-print(float(hexStrToInt(trimmedString[12:17]))/100)
+while True:
+	# Accelerometer
+	child.sendline("char-read-uuid 0x2001")
+	child.expect("handle: ", timeout=10)
+	child.expect("\r\n", timeout=10)
+	trimmedString = child.before
+	print("Accel: "),
+	print(trimmedString),
+#print(float(hexStrToInt(trimmedString[0:5]))/100),
+#print(float(hexStrToInt(trimmedString[6:11]))/100),
+#print(float(hexStrToInt(trimmedString[12:17]))/100)
 
 # Gyroscope
 child.sendline("char-read-uuid 0x2002")
 child.expect("handle: ", timeout=10)
 child.expect("\r\n", timeout=10)
-trimmedString = child.before[child.before.find(":")+2:]
+trimmedString = child.before #[child.before.find(":")+2:]
 print("Gyro: "),
 print(trimmedString),
-print(float(hexStrToInt(trimmedString[0:5]))/100),
-print(float(hexStrToInt(trimmedString[6:11]))/100),
-print(float(hexStrToInt(trimmedString[12:17]))/100)
+#print(float(hexStrToInt(trimmedString[0:5]))/100),
+#print(float(hexStrToInt(trimmedString[6:11]))/100),
+#print(float(hexStrToInt(trimmedString[12:17]))/100)
 
 # Magnetometer
-child.sendline("char-read-uuid 0x2003")
-child.expect("handle: ", timeout=10)
-child.expect("\r\n", timeout=10)
-trimmedString = child.before[child.before.find(":")+2:]
-print("Magneto:"),
-print(trimmedString),
-print(hexStrToInt(trimmedString[0:5])),
-print(hexStrToInt(trimmedString[6:11])),
-print(hexStrToInt(trimmedString[12:17]))
+#child.sendline("char-read-uuid 0x2003")
+#child.expect("handle: ", timeout=10)
+#child.expect("\r\n", timeout=10)
+#trimmedString = child.before[child.before.find(":")+2:]
+#print("Magneto:"),
+#print(trimmedString),
+#print(hexStrToInt(trimmedString[0:5])),
+#print(hexStrToInt(trimmedString[6:11])),
+#print(hexStrToInt(trimmedString[12:17]))
 
 # while True:
 # Accelerometer
