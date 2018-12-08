@@ -24,7 +24,11 @@ print(" Connected!")
 
 
 def hexStrToInt(hexstr):
-    val = int(hexstr[0:2], 16) + (int(hexstr[3:5], 16) << 8)
+    lowval = int(hexstr[0:2],16)*256
+    highval = int(hexstr[3:5],16)
+    #print("Lowval ", lowval)
+    #print("Highval ", highval) 
+    val = lowval + highval
     if ((val & 0x8000) == 0x8000):  # treat signed 16bits
         val = -((val ^ 0xffff)+1)
     return val
@@ -35,14 +39,18 @@ while True:
 	child.sendline("char-read-uuid 0x2001")
 	child.expect("handle: ", timeout=10)
 	child.expect("\r\n", timeout=10)
-	trimmedString = child.before[child.before.find(':')+2:]
-	print("Accel: "),
+	input = str(child.before)
+	print(input)
+	index  = input.find(':')
+	trimmedString = input[index+2:]
 	print(trimmedString)
-	# print(float(hexStrToInt(trimmedString[0:5]))/100),
-	# print(float(hexStrToInt(trimmedString[6:11]))/100),
-	# print(float(hexStrToInt(trimmedString[12:17]))/100)
+	#trimmedString = trimmedString[1:]
+	print("Accel: "),
+	print("String:%s" % trimmedString)
+	print(float(hexStrToInt(trimmedString[0:5]))/1000),
+	print(float(hexStrToInt(trimmedString[6:11]))/1000),
+	print(float(hexStrToInt(trimmedString[12:17]))/1000)
 	time.sleep(1)
-	
 
 # Gyroscope
 child.sendline("char-read-uuid 0x2002")
