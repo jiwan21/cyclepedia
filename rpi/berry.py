@@ -88,9 +88,9 @@ while True:
     acc_medianTable2Z.sort()
 
     # The middle value is the value we are interested in
-    ACCx = acc_medianTable2X[ACC_MEDIANTABLESIZE/2];
-    ACCy = acc_medianTable2Y[ACC_MEDIANTABLESIZE/2];
-    ACCz = acc_medianTable2Z[ACC_MEDIANTABLESIZE/2];
+    ACCx = acc_medianTable2X[int(ACC_MEDIANTABLESIZE/2)];
+    ACCy = acc_medianTable2Y[int(ACC_MEDIANTABLESIZE/2)];
+    ACCz = acc_medianTable2Z[int(ACC_MEDIANTABLESIZE/2)];
 
 
 
