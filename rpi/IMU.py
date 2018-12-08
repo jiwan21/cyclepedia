@@ -24,10 +24,10 @@ def detectIMU():
         LSM9DS0_WHO_G_response = (bus.read_byte_data(LSM9DS0_GYR_ADDRESS, LSM9DS0_WHO_AM_I_G))
         LSM9DS0_WHO_XM_response = (bus.read_byte_data(LSM9DS0_ACC_ADDRESS, LSM9DS0_WHO_AM_I_XM))
     except IOError as e:
-        print ''        #need to do something here, so we just print a space
+        print('')        #need to do something here, so we just print a space
     else:
         if (LSM9DS0_WHO_G_response == 0xd4) and (LSM9DS0_WHO_XM_response == 0x49):
-            print "Found LSM9DS0"
+            print("Found LSM9DS0")
             LSM9DS0 = 1
 
 
@@ -39,17 +39,13 @@ def detectIMU():
         LSM9DS1_WHO_M_response = (bus.read_byte_data(LSM9DS1_MAG_ADDRESS, LSM9DS1_WHO_AM_I_M))
 
     except IOError as f:
-        print ''        #need to do something here, so we just print a space
+        print('')        #need to do something here, so we just print a space
     else:
         if (LSM9DS1_WHO_XG_response == 0x68) and (LSM9DS1_WHO_M_response == 0x3d):
-            print "Found LSM9DS1"
+            print("Found LSM9DS1")
             LSM9DS0 = 0
 
     time.sleep(1)
-
-
-
-    
 
 
 def writeAG(register,value):
@@ -95,10 +91,10 @@ def readACCz():
 
 
 def readMAGx():
-		mag_l = bus.read_byte_data(MAG_ADDRESS, OUT_X_L_M)
-		mag_h = bus.read_byte_data(MAG_ADDRESS, OUT_X_H_M)
-		mag_combined = (mag_l | mag_h <<8)
-		return mag_combined  if mag_combined < 32768 else mag_combined - 65536
+	mag_l = bus.read_byte_data(MAG_ADDRESS, OUT_X_L_M)
+	mag_h = bus.read_byte_data(MAG_ADDRESS, OUT_X_H_M)
+	mag_combined = (mag_l | mag_h <<8)
+	return mag_combined  if mag_combined < 32768 else mag_combined - 65536
 
 
 def readMAGy():
@@ -139,21 +135,12 @@ def readGYRz():
 
         return gyr_combined  if gyr_combined < 32768 else gyr_combined - 65536
 
-
-
-
-
-
-
-
-
 def writeACC(register,value):
     if(LSM9DS0):
         bus.write_byte_data(LSM9DS0_ACC_ADDRESS , register, value)
     else:
         bus.write_byte_data(LSM9DS1_ACC_ADDRESS , register, value)
     return -1
-    
 
 def writeMAG(register,value):
     if(LSM9DS0):
@@ -168,8 +155,6 @@ def writeGRY(register,value):
     else:
         bus.write_byte_data(LSM9DS1_GYR_ADDRESS , register, value)        
         return -1
-
-
 
 def readACCx():
     if (LSM9DS0):
@@ -190,7 +175,7 @@ def readACCy():
     else:
         acc_l = bus.read_byte_data(LSM9DS1_ACC_ADDRESS, LSM9DS1_OUT_Y_L_XL)
         acc_h = bus.read_byte_data(LSM9DS1_ACC_ADDRESS, LSM9DS1_OUT_Y_H_XL)       
-    
+
     acc_combined = (acc_l | acc_h <<8)
     return acc_combined  if acc_combined < 32768 else acc_combined - 65536
 
@@ -202,7 +187,7 @@ def readACCz():
     else:
         acc_l = bus.read_byte_data(LSM9DS1_ACC_ADDRESS, LSM9DS1_OUT_Z_L_XL)
         acc_h = bus.read_byte_data(LSM9DS1_ACC_ADDRESS, LSM9DS1_OUT_Z_H_XL)
-	
+
     acc_combined = (acc_l | acc_h <<8)
     return acc_combined  if acc_combined < 32768 else acc_combined - 65536
 
@@ -277,8 +262,6 @@ def readGYRz():
 
     gyr_combined = (gyr_l | gyr_h <<8)
     return gyr_combined  if gyr_combined < 32768 else gyr_combined - 65536
-
-
 
 
 def initIMU():

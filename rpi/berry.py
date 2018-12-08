@@ -6,7 +6,7 @@ import IMU
 import datetime
 import os
 # If the IMU is upside down (Skull logo facing up), change this value to 1
-IMU_UPSIDE_DOWN = 1	
+IMU_UPSIDE_DOWN = 1
 
 
 RAD_TO_DEG = 57.29578
@@ -62,7 +62,7 @@ while True:
     b = datetime.datetime.now() - a
     a = datetime.datetime.now()
     LP = b.microseconds/(1000000*1.0)
-    print "Loop Time | %5.2f|" % ( LP ),
+    print("Loop Time | %5.2f|" % LP)
 
     ############################################### 
     #### Apply low pass filter ####
