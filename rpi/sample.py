@@ -35,7 +35,7 @@ while True:
 	child.sendline("char-read-uuid 0x2001")
 	child.expect("handle: ", timeout=10)
 	child.expect("\r\n", timeout=10)
-	trimmedString = child.before
+	trimmedString = child.before[child.before.find(':')+2:]
 	print("Accel: "),
 	print(trimmedString)
 	# print(float(hexStrToInt(trimmedString[0:5]))/100),
@@ -48,7 +48,7 @@ while True:
 child.sendline("char-read-uuid 0x2002")
 child.expect("handle: ", timeout=10)
 child.expect("\r\n", timeout=10)
-trimmedString = child.before #[child.before.find(":")+2:]
+trimmedString = child.before[child.before.find(':')+2:]
 print("Gyro: "),
 print(trimmedString),
 #print(float(hexStrToInt(trimmedString[0:5]))/100),
