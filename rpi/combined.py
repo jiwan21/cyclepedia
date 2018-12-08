@@ -5,7 +5,7 @@ import socket
 
 DEVICE = "00:2E:40:08:00:31"
 UDP_IP = "192.168.0.36"
-UDP_PORT = 65300
+UDP_PORT = 12345
 
 print("Hexiwear address:"),
 print(DEVICE)
@@ -38,6 +38,17 @@ def hexStrToInt(hexstr):
         val = -((val ^ 0xffff)+1)
     return val
 
+def computeDirection(x, y):
+	if y<-4:
+		return 'R'
+	elif y>4:
+		return 'L'
+	elif x<-3:
+		return 'F'
+	elif x>3:
+		return 'B'
+	else:
+		return 'N'
 
 while True:
 	#Accelerometer
@@ -53,5 +64,7 @@ while True:
 	y = float(hexStrToInt(trimmedString[6:11]))/1000
 	z = float(hexStrToInt(trimmedString[12:17]))/1000
 	message = "Accel: %.3f, %.3f, %.3f" % (x,y,z)
-	sock.send(message.encode('utf-8'))
+	dir = computeDirection(x,y)
+	sock.send(dir.encode('utf-8'))
 	print(message)
+	print("Direction: %s" % dir)
