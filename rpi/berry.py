@@ -43,7 +43,8 @@ while True:
     #Read the accelerometer,gyroscope and magnetometer values
     ACCx = IMU.readACCx()
     ACCy = IMU.readACCy()
-    ACCz = IMU.readACCz() 
+    ACCz = IMU.readACCz()
+ 
 
     ##Calculate loop Period(LP). How long between Gyro Reads
     b = datetime.datetime.now() - a
