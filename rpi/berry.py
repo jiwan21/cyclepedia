@@ -38,7 +38,7 @@ IMU.detectIMU()     #Detect if BerryIMUv1 or BerryIMUv2 is connected.
 IMU.initIMU()       #Initialise the accelerometer, gyroscope and compass
 
 
-while True:
+def readBerry():
 
     #Read the accelerometer,gyroscope and magnetometer values
     ACCx = IMU.readACCx()
@@ -113,10 +113,6 @@ while True:
     roll = -math.asin(accYnorm/math.cos(pitch))
     ############################ END ##################################
 
-    if 1:			#Change to '0' to stop showing the angles from the accelerometer
-        print ("#Roll: %.4f" % roll)
-
-    #slow program down a bit, makes the output more readable
-    time.sleep(0.03)
+    return roll
 
 

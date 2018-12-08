@@ -2,6 +2,7 @@
 import pexpect
 import time
 import socket
+import berry.py
 
 DEVICE = "00:2E:40:08:00:31"
 UDP_IP = "192.168.0.36"
@@ -39,9 +40,10 @@ def hexStrToInt(hexstr):
     return val
 
 def computeDirection(x, y):
-	if y<-4:
+	roll = readBerry()
+	if roll>0.5 and x<-3:
 		return 'R'
-	elif y>4:
+	elif roll <-0.5 and x<-3:
 		return 'L'
 	elif x<-3:
 		return 'F'
