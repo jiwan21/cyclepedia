@@ -43,20 +43,7 @@ while True:
     #Read the accelerometer,gyroscope and magnetometer values
     ACCx = IMU.readACCx()
     ACCy = IMU.readACCy()
-    ACCz = IMU.readACCz()
-    GYRx = IMU.readGYRx()
-    GYRy = IMU.readGYRy()
-    GYRz = IMU.readGYRz()
-    MAGx = IMU.readMAGx()
-    MAGy = IMU.readMAGy()
-    MAGz = IMU.readMAGz()
-
-
-    #Apply compass calibration    
-    MAGx -= (magXmin + magXmax) /2 
-    MAGy -= (magYmin + magYmax) /2 
-    MAGz -= (magZmin + magZmax) /2 
- 
+    ACCz = IMU.readACCz() 
 
     ##Calculate loop Period(LP). How long between Gyro Reads
     b = datetime.datetime.now() - a
@@ -71,9 +58,6 @@ while True:
     ACCy =  ACCy  * ACC_LPF_FACTOR + oldYAccRawValue*(1 - ACC_LPF_FACTOR);
     ACCz =  ACCz  * ACC_LPF_FACTOR + oldZAccRawValue*(1 - ACC_LPF_FACTOR);
 
-    oldXMagRawValue = MAGx
-    oldYMagRawValue = MAGy
-    oldZMagRawValue = MAGz
     oldXAccRawValue = ACCx
     oldYAccRawValue = ACCy
     oldZAccRawValue = ACCz
