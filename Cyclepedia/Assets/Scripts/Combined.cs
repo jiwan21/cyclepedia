@@ -55,7 +55,7 @@ public class Combined : MonoBehaviour
             byte[] receiveBytes = udp.Receive(ref RemoteIpEndPoint);
             string returnData = Encoding.ASCII.GetString(receiveBytes);
             dir = returnData[0];
-            Debug.Log(returnData);
+            //Debug.Log(returnData);
         }
     }
 
@@ -95,8 +95,8 @@ public class Combined : MonoBehaviour
                 input.x = 0.0f;
             }
              
-            Debug.Log("x: " + input.x);
-            Debug.Log("y: " + input.y);
+            //Debug.Log("x: " + input.x);
+            //Debug.Log("y: " + input.y);
 
             if (input != Vector2.zero)
             {

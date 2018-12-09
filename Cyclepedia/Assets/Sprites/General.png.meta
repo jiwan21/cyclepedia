@@ -62,7 +62,7 @@ TextureImporter:
     21300114: grass_0
     21300116: General_58
     21300118: General_59
-    21300120: General_60
+    21300120: grass_3
     21300122: General_61
     21300124: General_62
     21300126: General_63
@@ -113,7 +113,7 @@ TextureImporter:
     21300216: General_108
     21300218: General_109
     21300220: General_110
-    21300222: General_111
+    21300222: grass_1
     21300224: General_112
     21300226: General_113
     21300228: General_114
@@ -212,8 +212,8 @@ TextureImporter:
     21300414: General_207
     21300416: General_208
     21300418: General_209
-    21300420: General_210
-    21300422: General_211
+    21300420: post_1
+    21300422: post_2
     21300424: General_212
     21300426: General_213
     21300428: General_214
@@ -229,9 +229,9 @@ TextureImporter:
     21300448: General_224
     21300450: General_225
     21300452: General_226
-    21300454: General_227
-    21300456: General_228
-    21300458: General_229
+    21300454: white_fence_1
+    21300456: white_fence_2
+    21300458: white_fence_3
     21300460: General_230
     21300462: General_231
     21300464: General_232
@@ -262,7 +262,7 @@ TextureImporter:
     21300514: General_257
     21300516: General_258
     21300518: General_259
-    21300520: General_260
+    21300520: grass_2
     21300522: General_261
     21300524: General_262
     21300526: General_263
@@ -278,9 +278,9 @@ TextureImporter:
     21300546: General_273
     21300548: General_274
     21300550: General_275
-    21300552: General_276
-    21300554: General_277
-    21300556: General_278
+    21300552: white_fence_4
+    21300554: white_fence_5
+    21300556: white_fence_6
     21300558: General_279
     21300560: General_280
     21300562: General_281
@@ -327,9 +327,9 @@ TextureImporter:
     21300644: General_322
     21300646: General_323
     21300648: General_324
-    21300650: General_325
-    21300652: General_326
-    21300654: General_327
+    21300650: white_fence_7
+    21300652: white_fence_8
+    21300654: white_fence_9
     21300656: General_328
     21300658: General_329
     21300660: General_330
@@ -490,7 +490,7 @@ TextureImporter:
     21300970: General_485
     21300972: General_486
     21300974: General_487
-    21300976: General_488
+    21300976: shrub
     21300978: General_489
     21300980: General_490
     21300982: General_491
@@ -515,7 +515,7 @@ TextureImporter:
     21301020: General_510
     21301022: General_511
     21301024: General_512
-    21301026: General_513
+    21301026: tree_fat
     21301028: General_514
     21301030: General_515
     21301032: General_516
@@ -527,7 +527,7 @@ TextureImporter:
     21301044: General_522
     21301046: General_523
     21301048: General_524
-    21301050: General_525
+    21301050: bridge_0
     21301052: General_526
     21301054: General_527
     21301056: General_528
@@ -556,9 +556,9 @@ TextureImporter:
     21301102: General_551
     21301104: General_552
     21301106: General_553
-    21301108: General_554
+    21301108: bridge_3
     21301110: General_555
-    21301112: General_556
+    21301112: bridge
     21301114: General_557
     21301116: General_558
     21301118: General_559
@@ -585,9 +585,9 @@ TextureImporter:
     21301160: General_580
     21301162: General_581
     21301164: General_582
-    21301166: General_583
+    21301166: bridge_2
     21301168: General_584
-    21301170: General_585
+    21301170: bridge_1
     21301172: General_586
     21301174: General_587
     21301176: General_588
@@ -623,7 +623,7 @@ TextureImporter:
     21301236: General_618
     21301238: post_0
     21301240: General_620
-    21301242: General_621
+    21301242: water_rock_0
     21301244: General_622
     21301246: General_623
     21301248: General_624
@@ -877,7 +877,7 @@ TextureImporter:
     21301744: General_872
     21301746: General_873
     21301748: General_874
-    21301750: General_875
+    21301750: observatory
     21301752: General_876
     21301754: General_877
     21301756: General_878
@@ -889,7 +889,7 @@ TextureImporter:
     21301768: General_884
     21301770: General_885
     21301772: General_886
-    21301774: General_887
+    21301774: target
     21301776: General_888
     21301778: General_889
     21301780: General_890
@@ -901,7 +901,7 @@ TextureImporter:
     21301792: General_896
     21301794: General_897
     21301796: General_898
-    21301798: General_899
+    21301798: city_target
     21301800: General_900
     21301802: General_901
     21301804: General_902
@@ -910,7 +910,7 @@ TextureImporter:
     21301810: General_905
     21301812: General_906
     21301814: General_907
-    21301816: General_908
+    21301816: seven_eleven
     21301818: General_909
     21301820: General_910
     21301822: General_911
@@ -1033,7 +1033,7 @@ TextureImporter:
     21302056: General_1028
     21302058: General_1029
     21302060: General_1030
-    21302062: General_1031
+    21302062: supermarket
     21302064: General_1032
     21302066: General_1033
     21302068: General_1034
@@ -1047,7 +1047,7 @@ TextureImporter:
     21302084: General_1042
     21302086: General_1043
     21302088: General_1044
-    21302090: General_1045
+    21302090: market_orange
     21302092: General_1046
     21302094: General_1047
     21302096: General_1048
@@ -1249,7 +1249,7 @@ TextureImporter:
     21302488: General_1244
     21302490: General_1245
     21302492: General_1246
-    21302494: General_1247
+    21302494: brown_house
     21302496: General_1248
     21302498: General_1249
     21302500: General_1250
@@ -1261,7 +1261,7 @@ TextureImporter:
     21302512: General_1256
     21302514: General_1257
     21302516: General_1258
-    21302518: General_1259
+    21302518: purple_big_house
     21302520: General_1260
     21302522: General_1261
     21302524: General_1262
@@ -1330,7 +1330,7 @@ TextureImporter:
     21302650: General_1325
     21302652: General_1326
     21302654: General_1327
-    21302656: General_1328
+    21302656: purple_house
     21302658: General_1329
     21302660: General_1330
     21302662: General_1331
@@ -1381,7 +1381,7 @@ TextureImporter:
     21302752: General_1376
     21302754: General_1377
     21302756: General_1378
-    21302758: General_1379
+    21302758: red_house
     21302760: General_1380
     21302762: General_1381
     21302764: General_1382
@@ -1487,7 +1487,7 @@ TextureImporter:
     21302964: General_1482
     21302966: General_1483
     21302968: General_1484
-    21302970: General_1485
+    21302970: station
     21302972: General_1486
     21302974: General_1487
     21302976: General_1488
@@ -1508,7 +1508,7 @@ TextureImporter:
     21303006: General_1503
     21303008: General_1504
     21303010: General_1505
-    21303012: General_1506
+    21303012: hotel
     21303014: General_1507
     21303016: General_1508
     21303018: General_1509
@@ -1542,7 +1542,7 @@ TextureImporter:
     21303074: General_1537
     21303076: General_1538
     21303078: General_1539
-    21303080: General_1540
+    21303080: green_house
     21303082: General_1541
     21303084: General_1542
     21303086: General_1543
@@ -1729,6 +1729,7 @@ TextureImporter:
     21303448: General_1724
     21303450: General_1725
     21303452: General_1726
+    21303454: General_10
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -3011,7 +3012,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_60
+      name: grass_3
       rect:
         serializedVersion: 2
         x: 48
@@ -4031,7 +4032,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_111
+      name: grass_1
       rect:
         serializedVersion: 2
         x: 64
@@ -6011,15 +6012,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_210
+      name: post_1
       rect:
         serializedVersion: 2
         x: 48
         y: 768
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6031,15 +6032,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_211
+      name: post_2
       rect:
         serializedVersion: 2
         x: 64
         y: 768
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6351,7 +6352,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_227
+      name: white_fence_1
       rect:
         serializedVersion: 2
         x: 320
@@ -6371,7 +6372,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_228
+      name: white_fence_2
       rect:
         serializedVersion: 2
         x: 336
@@ -6391,7 +6392,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_229
+      name: white_fence_3
       rect:
         serializedVersion: 2
         x: 352
@@ -7011,10 +7012,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_260
+      name: grass_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 752
         width: 16
         height: 16
@@ -7331,7 +7332,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_276
+      name: white_fence_4
       rect:
         serializedVersion: 2
         x: 320
@@ -7351,7 +7352,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_277
+      name: white_fence_5
       rect:
         serializedVersion: 2
         x: 336
@@ -7371,7 +7372,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_278
+      name: white_fence_6
       rect:
         serializedVersion: 2
         x: 352
@@ -8311,11 +8312,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_325
+      name: white_fence_7
       rect:
         serializedVersion: 2
         x: 320
-        y: 736
+        y: 737
         width: 16
         height: 16
       alignment: 0
@@ -8331,7 +8332,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_326
+      name: white_fence_8
       rect:
         serializedVersion: 2
         x: 336
@@ -8351,7 +8352,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_327
+      name: white_fence_9
       rect:
         serializedVersion: 2
         x: 352
@@ -9795,7 +9796,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 704
+        y: 703
         width: 16
         height: 16
       alignment: 0
@@ -11571,14 +11572,14 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_488
+      name: shrub
       rect:
         serializedVersion: 2
         x: 208
         y: 672
         width: 16
-        height: 16
-      alignment: 0
+        height: 48
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -12071,15 +12072,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_513
+      name: tree_fat
       rect:
         serializedVersion: 2
         x: 608
         y: 672
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.375, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -12311,12 +12312,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_525
+      name: bridge_0
       rect:
         serializedVersion: 2
         x: 128
         y: 656
-        width: 16
+        width: 80
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -12357,7 +12358,7 @@ TextureImporter:
         x: 160
         y: 656
         width: 16
-        height: 16
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -12891,12 +12892,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_554
+      name: bridge_3
       rect:
         serializedVersion: 2
         x: 128
         y: 640
-        width: 16
+        width: 80
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -12931,7 +12932,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_556
+      name: bridge
       rect:
         serializedVersion: 2
         x: 160
@@ -13471,12 +13472,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_583
+      name: bridge_2
       rect:
         serializedVersion: 2
         x: 128
         y: 624
-        width: 16
+        width: 80
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -13511,13 +13512,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_585
+      name: bridge_1
       rect:
         serializedVersion: 2
         x: 160
         y: 624
         width: 16
-        height: 16
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -14231,15 +14232,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_621
+      name: water_rock_0
       rect:
         serializedVersion: 2
         x: 288
         y: 608
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19311,15 +19312,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_875
+      name: observatory
       rect:
         serializedVersion: 2
         x: 0
         y: 400
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 112
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41666666}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19551,13 +19552,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_887
+      name: target
       rect:
         serializedVersion: 2
         x: 224
         y: 400
-        width: 16
-        height: 16
+        width: 112
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -19791,13 +19792,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_899
+      name: city_target
       rect:
         serializedVersion: 2
         x: 416
         y: 400
-        width: 16
-        height: 16
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -19971,15 +19972,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_908
+      name: seven_eleven
       rect:
         serializedVersion: 2
         x: 560
         y: 400
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.125, y: 0.125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -22431,13 +22432,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_1031
+      name: supermarket
       rect:
         serializedVersion: 2
         x: 0
         y: 320
-        width: 16
-        height: 16
+        width: 112
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -22711,13 +22712,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_1045
+      name: market_orange
       rect:
         serializedVersion: 2
         x: 224
         y: 320
-        width: 16
-        height: 16
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -26751,13 +26752,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_1247
+      name: brown_house
       rect:
         serializedVersion: 2
         x: 320
         y: 240
-        width: 16
-        height: 16
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -26991,13 +26992,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_1259
+      name: purple_big_house
       rect:
         serializedVersion: 2
         x: 512
         y: 240
-        width: 16
-        height: 16
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -28371,15 +28372,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_1328
+      name: purple_house
       rect:
         serializedVersion: 2
         x: 0
         y: 192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.125, y: 0.125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -29391,13 +29392,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_1379
+      name: red_house
       rect:
         serializedVersion: 2
         x: 224
         y: 176
-        width: 16
-        height: 16
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -31511,15 +31512,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_1485
+      name: station
       rect:
         serializedVersion: 2
         x: 64
         y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 80
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -31931,13 +31932,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_1506
+      name: hotel
       rect:
         serializedVersion: 2
         x: 464
         y: 128
-        width: 16
-        height: 16
+        width: 80
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -32611,13 +32612,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_1540
+      name: green_house
       rect:
         serializedVersion: 2
         x: 224
         y: 96
-        width: 16
-        height: 16
+        width: 112
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -36346,6 +36347,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9c51eedc55f9b44abb19b0b82fa403b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_10
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 160
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efacfcc7215a4852bdc98277457cf2a
       vertices: []
       indices: 
       edges: []

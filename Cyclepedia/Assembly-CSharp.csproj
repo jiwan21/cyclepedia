@@ -62,19 +62,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Combined.cs" />
     <Compile Include="Assets\Scripts\NetworkController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PythonInterpreter.cs" />
+    <Compile Include="Assets\Scripts\SocketClient.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>/Users/taco/Documents/Fall 2018 SENOR YR/ECE 180DA/Cyclepedia.zip/Cyclepedia/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>/Users/taco/Documents/Fall2018/ECE180DA/Cyclepedia.zip/Cyclepedia/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/taco/Documents/Fall 2018 SENOR YR/ECE 180DA/Cyclepedia.zip/Cyclepedia/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/taco/Documents/Fall2018/ECE180DA/Cyclepedia.zip/Cyclepedia/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/taco/Documents/Fall 2018 SENOR YR/ECE 180DA/Cyclepedia.zip/Cyclepedia/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/taco/Documents/Fall2018/ECE180DA/Cyclepedia.zip/Cyclepedia/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/taco/Documents/Fall 2018 SENOR YR/ECE 180DA/Cyclepedia.zip/Cyclepedia/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/taco/Documents/Fall2018/ECE180DA/Cyclepedia.zip/Cyclepedia/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

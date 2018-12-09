@@ -249,3 +249,7 @@
 /Users/taco/Cyclepedia/obj/Debug/Assembly-CSharp.csproj.CopyComplete
 /Users/taco/Cyclepedia/obj/Debug/Assembly-CSharp.dll
 /Users/taco/Cyclepedia/obj/Debug/Assembly-CSharp.pdb
+/Users/taco/Documents/Fall 2018 SENOR YR/ECE 180DA/Cyclepedia.zip/Cyclepedia/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+/Users/taco/Documents/Fall 2018 SENOR YR/ECE 180DA/Cyclepedia.zip/Cyclepedia/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
+/Users/taco/Documents/Fall 2018 SENOR YR/ECE 180DA/Cyclepedia.zip/Cyclepedia/obj/Debug/Assembly-CSharp.dll
+/Users/taco/Documents/Fall 2018 SENOR YR/ECE 180DA/Cyclepedia.zip/Cyclepedia/obj/Debug/Assembly-CSharp.pdb

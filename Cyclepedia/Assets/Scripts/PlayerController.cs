@@ -118,10 +118,10 @@ public class PlayerController : MonoBehaviour {
     }
 }
 
-enum Direction
-{
-    North,
-    East,
-    South,
-    West
-}
+//enum Direction
+//{
+//    North,
+//    East,
+//    South,
+//    West
+//}
