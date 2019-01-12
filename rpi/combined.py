@@ -46,7 +46,7 @@ def readBerry():
     ACCz = IMU.readACCz()
 
     #Normalize accelerometer raw values.
-    if not IMU_UPSIDE_DOWN:        
+    if not IMU_UPSIDE_DOWN:
         #Use these two lines when the IMU is up the right way. Skull logo is facing down
         accXnorm = ACCx/math.sqrt(ACCx * ACCx + ACCy * ACCy + ACCz * ACCz)
         accYnorm = ACCy/math.sqrt(ACCx * ACCx + ACCy * ACCy + ACCz * ACCz)
@@ -65,8 +65,8 @@ def readBerry():
 #---------------------------------------------------------------------------------------
 
 DEVICE = "00:2E:40:08:00:31"
-UDP_IP = "192.168.0.36"
-UDP_PORT = 12345
+UDP_IP = "192.168.43.142"
+UDP_PORT = 12346
 
 print("Hexiwear address:"),
 print(DEVICE)
@@ -106,18 +106,28 @@ def hexStrToInt(hexstr):
         val = -((val ^ 0xffff)+1)
     return val
 
+prevDir = 'N' 
 def computeDirection(x, y):
 	roll = readBerry()
-	if roll>0.5 and x<-3:
-		return 'R'
-	elif roll <-0.5 and x<-3:
-		return 'L'
+	global prevDir
+	if roll>0.5:
+		if prevDir == 'R':
+			return 'N'
+		else:
+			turn = 'R'
+	elif roll <-0.5:
+		if prevDir == 'L':
+			return 'N'
+		else:
+			turn = 'L'
 	elif x<-3:
-		return 'F'
+		turn = 'F'
 	elif x>3:
-		return 'B'
+		turn = 'B'
 	else:
-		return 'N'
+		turn = 'N'
+	prevDir = turn
+	return turn
 
 while True:
 	#Accelerometer
@@ -129,11 +139,32 @@ while True:
 	index  = input.find(':')
 	trimmedString = input[index+2:]
 	print(trimmedString)
-	x = float(hexStrToInt(trimmedString[0:5]))/1000
-	y = float(hexStrToInt(trimmedString[6:11]))/1000
-	z = float(hexStrToInt(trimmedString[12:17]))/1000
+	# scales back to m/s^2
+	x = float(hexStrToInt(trimmedString[0:5]))*0.00098
+	y = float(hexStrToInt(trimmedString[6:11]))*0.00098
+	z = float(hexStrToInt(trimmedString[12:17]))*0.00098
+	angle = math.atan(y/x)/6.28318*360 + 90
+	if x<0:
+		angle = angle + 180
 	message = "Accel: %.3f, %.3f, %.3f" % (x,y,z)
-	dir = computeDirection(x,y)
+	#dir = computeDirection(x,y)
 	#sock.send(dir.encode('utf-8'))
 	print(message)
-	print("Direction: %s" % dir)
+	print("Angle: %.3f" % angle)
+	#print("Direction: %s" % dir)
+
+	#Gyroscope
+	#child.sendline("char-read-uuid 0x2002")
+	#child.expect("handle: ", timeout=10)
+	#child.expect("\r\n", timeout=10)
+	#input = str(child.before)
+	#print(input)
+	#index  = input.find(':')
+	#trimmedString = input[index+2:]
+	#print(trimmedString)
+	# scales back to m/s^2
+	#x = float(hexStrToInt(trimmedString[0:5]))/10000
+	#y = float(hexStrToInt(trimmedString[6:11]))/10000
+	#z = float(hexStrToInt(trimmedString[12:17]))/10000
+	#print("Gyro: %.3f, %.3f, %.3f" % (x,y,z))
+
