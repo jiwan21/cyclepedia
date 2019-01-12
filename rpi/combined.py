@@ -129,8 +129,7 @@ def computeDirection(x, y):
 	prevDir = turn
 	return turn
 
-prev_angle = 0
-while True:
+def getAngle():
 	#Accelerometer
 	child.sendline("char-read-uuid 0x2001")
 	child.expect("handle: ", timeout=10)
@@ -144,12 +143,25 @@ while True:
 	x = float(hexStrToInt(trimmedString[0:5]))*0.00098
 	y = float(hexStrToInt(trimmedString[6:11]))*0.00098
 	z = float(hexStrToInt(trimmedString[12:17]))*0.00098
+	print("Accel: %.3f, %.3f, %.3f" % (x,y,z))
 	angle = math.atan(y/x)/6.28318*360 + 90
 	if x<0:
 		angle = angle + 180
-	speed = ((angle - prev_angle)%360)/0.2 # rotations per second
-	prev_angle = angle
-	print("Accel: %.3f, %.3f, %.3f" % (x,y,z))
+	return angle
+
+next_angle = getAngle() + 60
+prev_time = time.time() 
+curr_time = 0
+speed = 0
+while True:
+	angle = getAngle()
+	delta = (angle - next_angle)%360
+	if delta > 60: # update speed after every 1/6 of rotation
+		curr_time = time.time()
+		speed = delta/360/(curr_time - prev_time)
+		prev_time = curr_time
+		next_angle = angle + 60
+	
 	print("Angle: %.3f" % angle)
 	print("RPS: %.3f" % speed)
 	#dir = computeDirection(x,y)
