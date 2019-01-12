@@ -159,7 +159,6 @@ def getGyro():
 	index  = input.find(':')
 	trimmedString = input[index+2:]
 	print(trimmedString)
-	scales back to m/s^2
 	x = float(hexStrToInt(trimmedString[0:5]))/10000
 	y = float(hexStrToInt(trimmedString[6:11]))/10000
 	z = float(hexStrToInt(trimmedString[12:17]))/10000
