@@ -129,6 +129,7 @@ def computeDirection(x, y):
 	prevDir = turn
 	return turn
 
+prev_angle = 0
 while True:
 	#Accelerometer
 	child.sendline("char-read-uuid 0x2001")
@@ -146,11 +147,17 @@ while True:
 	angle = math.atan(y/x)/6.28318*360 + 90
 	if x<0:
 		angle = angle + 180
-	message = "Accel: %.3f, %.3f, %.3f" % (x,y,z)
+	speed = ((angle - prev_angle)%360)/0.2 # rotations per second
+	prev_angle = angle
+	print("Accel: %.3f, %.3f, %.3f" % (x,y,z))
+	print("Angle: %.3f" % angle)
+	print("RPS: %.3f" % speed)
 	#dir = computeDirection(x,y)
 	#sock.send(dir.encode('utf-8'))
-	print(message)
-	print("Angle: %.3f" % angle)
+
+	
+
+	time.sleep(0.2)
 	#print("Direction: %s" % dir)
 
 	#Gyroscope
