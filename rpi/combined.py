@@ -149,12 +149,29 @@ def getAngle():
 		angle = angle + 180
 	return angle
 
+def getGyro():
+	#Gyroscope
+	child.sendline("char-read-uuid 0x2002")
+	child.expect("handle: ", timeout=10)
+	child.expect("\r\n", timeout=10)
+	input = str(child.before)
+	print(input)
+	index  = input.find(':')
+	trimmedString = input[index+2:]
+	print(trimmedString)
+	scales back to m/s^2
+	x = float(hexStrToInt(trimmedString[0:5]))/10000
+	y = float(hexStrToInt(trimmedString[6:11]))/10000
+	z = float(hexStrToInt(trimmedString[12:17]))/10000
+	print("Gyro: %.3f, %.3f, %.3f" % (x,y,z))
+
 next_angle = getAngle() + 60
 prev_time = time.time() 
 curr_time = 0
 speed = 0
 while True:
 	angle = getAngle()
+	getGyro()
 	delta = (angle - next_angle)%360
 	if delta > 60: # update speed after every 1/6 of rotation
 		curr_time = time.time()
@@ -162,7 +179,7 @@ while True:
 		prev_time = curr_time
 		next_angle = angle + 60
 	
-	print("Angle: %.3f" % angle)
+	print("Angle: %.3f Next Angle: %.3f" % (angle,next_angle))
 	print("RPS: %.3f" % speed)
 	#dir = computeDirection(x,y)
 	#sock.send(dir.encode('utf-8'))
@@ -172,18 +189,5 @@ while True:
 	time.sleep(0.2)
 	#print("Direction: %s" % dir)
 
-	#Gyroscope
-	#child.sendline("char-read-uuid 0x2002")
-	#child.expect("handle: ", timeout=10)
-	#child.expect("\r\n", timeout=10)
-	#input = str(child.before)
-	#print(input)
-	#index  = input.find(':')
-	#trimmedString = input[index+2:]
-	#print(trimmedString)
-	# scales back to m/s^2
-	#x = float(hexStrToInt(trimmedString[0:5]))/10000
-	#y = float(hexStrToInt(trimmedString[6:11]))/10000
-	#z = float(hexStrToInt(trimmedString[12:17]))/10000
-	#print("Gyro: %.3f, %.3f, %.3f" % (x,y,z))
+	
 
