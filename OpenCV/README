@@ -1,0 +1,8 @@
+Code inspired by:
+https://www.youtube.com/watch?v=v-XcmsYlzjA
+https://www.superdatascience.com/opencv-face-detection/
+https://docs.opencv.org/3.4/db/d5c/tutorial_py_bg_subtraction.html
+
+Bike safety arm gesture recognition using OpenCV written in python. Utilizes OpenCV head detection and background subtraction to recognize bike turning positions (left, right, and stop). The program detects if there is one user in frame through head detection. Once this happens, it triggers arm gesture recognition and the program generates regions of interests in relation to where the user’s head is. These regions of interest are always being checked to see if something has entered the region or not. Through this, the program can sense if the arm is positioned a certain way if certain regions of interests are covered while others aren’t. Background subtraction is used to increase speed and accuracy of recognition since any details/change in background can make the arm harder to be seen.
+
+Some bugs include the following: if the user’s clothes have distinct designs, the program will sense faces in their clothes and the gesture recognition will never be triggered. If the lighting is poor or changes drastically, some thresholds need to be recalibrated. Future improvements can include a function that allows the program to have a calibration period so that the user doesn’t have to manually go into the code and change threshold values.
