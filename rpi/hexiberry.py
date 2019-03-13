@@ -106,29 +106,6 @@ def hexStrToInt(hexstr):
         val = -((val ^ 0xffff)+1)
     return val
 
-prevDir = 'N' 
-def computeDirection(x, y):
-	roll = readBerry()
-	global prevDir
-	if roll>0.5:
-		if prevDir == 'R':
-			return 'N'
-		else:
-			turn = 'R'
-	elif roll <-0.5:
-		if prevDir == 'L':
-			return 'N'
-		else:
-			turn = 'L'
-	elif x<-3:
-		turn = 'F'
-	elif x>3:
-		turn = 'B'
-	else:
-		turn = 'N'
-	prevDir = turn
-	return turn
-
 def getAngle():
 	#Accelerometer
 	child.sendline("char-read-uuid 0x2001")
@@ -144,6 +121,8 @@ def getAngle():
 	y = float(hexStrToInt(trimmedString[6:11]))*0.00098
 	z = float(hexStrToInt(trimmedString[12:17]))*0.00098
 	#print("Accel: %.3f, %.3f, %.3f" % (x,y,z))
+	if x == 0:
+		x = 0.000001
 	angle = math.atan(y/x)/6.28318*360 + 90
 	if x<0:
 		angle = angle + 180
@@ -162,26 +141,31 @@ def getGyro():
 	x = int(hexStrToInt(trimmedString[0:5]))
 	y = int(hexStrToInt(trimmedString[6:11]))
 	z = int(hexStrToInt(trimmedString[12:17]))
-	#print("Gyro: %d, %d, %d" % (x,y,z))
+	#print("Gyro: %d" % z)
 	return z
 
-next_angle = getAngle() + 60
-prev_time = time.time() 
+prev_time = time.time()
 curr_time = 0
 speed = 0
+prevAngle = 0
 while True:
-	angle = getAngle()
 	angularZ = getGyro()
-	delta = (angle - next_angle)%360
-	if delta > 60: # update speed after every 1/6 of rotation
-		curr_time = time.time()
-		speed = delta/360/(curr_time - prev_time)
-		prev_time = curr_time
-		next_angle = angle + 60
+	if angularZ > 25:
+		#angle = getAngle()
+		#delta = (angle - prevAngle)%360
+		#curr_time = time.time()
+		#speed = delta/360/(curr_time - prev_time)
+		#prev_time = curr_time
+		#prevAngle = angle
+		speed = angularZ
+	else:
+		speed = 0
 	#print("Angle: %.3f Next Angle: %.3f" % (angle,next_angle))
-	if angularZ > 40:
-		print("RPS: %.3f" % speed)
-	#dir = computeDirection(x,y)
-	#sock.send(dir.encode('utf-8'))
-	time.sleep(0.5)
+	print(readBerry())
+	speed = int(speed)
+	#print("RPS: %.3f" % speed)
+	#sock.send(str(speed).encode('utf-8'))
+	time.sleep(0.3)
+
+#print("RPS: %.3f" % speed)
 
