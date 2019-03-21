@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import division
-
+message = ""
+count = 0
 import re
 import sys
 
@@ -18,8 +19,8 @@ import socket
 import time
 
 #we use UDP to send the phrases to Unity
-UDP_IP = "127.0.0.1"  #IP address
-UDP_PORT = 5065         #port number
+UDP_IP = "192.168.43.142"  #IP address
+UDP_PORT = 5300         #port number
 
 print "UDP target IP:", UDP_IP
 print "UDP target port:", UDP_PORT
@@ -68,6 +69,8 @@ class MicrophoneStream(object):
     def _fill_buffer(self, in_data, frame_count, time_info, status_flags):
         """Continuously collect data from the audio stream, into the buffer."""
         self._buff.put(in_data)
+        global message
+        sock.sendto(message, (UDP_IP, UDP_PORT))
         return None, pyaudio.paContinue
 
     def generator(self):
@@ -133,14 +136,29 @@ def listen_print_loop(responses):
         if not result.is_final:
             sys.stdout.write(transcript + overwrite_chars + '\r')
             sys.stdout.flush()
-
+            
             num_chars_printed = len(transcript)
 
         else:
             print(transcript + overwrite_chars)
 
-            if(transcript):
-                sock.sendto(str(transcript) , (UDP_IP, UDP_PORT))
+            global message
+            global count
+            if(str(transcript)=="on your left" or str(transcript)==" on your left"):
+                message = "L," + str(count)
+                count=count+1
+            elif(str(transcript)=="on your right" or str(transcript)==" on your right"):
+                message = "R," + str(count)
+                count=count+1
+            elif(str(transcript)=="main menu" or str(transcript)==" main menu"):
+                message = "main menu"
+            elif(str(transcript)=="game" or str(transcript)==" game"):
+                message = "game"
+            elif(str(transcript)=="tutorial" or str(transcript)==" tutorial"):
+                message = "tutorial"
+            else:
+                message = "N,0"
+
 
             # Exit recognition if any of the transcribed phrases could be
             # one of our keywords.
