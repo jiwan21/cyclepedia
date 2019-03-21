@@ -64,38 +64,13 @@ def readBerry():
 #----------------------------------------Hexiwear---------------------------------------
 #---------------------------------------------------------------------------------------
 
-DEVICE = "00:2E:40:08:00:31"
+
 UDP_IP = "192.168.43.142"
 UDP_PORT = 12346
 
-print("Hexiwear address:"),
-print(DEVICE)
-
-# Run gatttool interactively.
-print("Run gatttool...")
-child = pexpect.spawn("gatttool -I")
-
-
-# Bluetooth connect to the Hexiwear device.
-print("Bluetooth connecting to "),
-print(DEVICE)
-con = "connect 00:2E:40:08:00:31"
-child.sendline(con)
-child.expect("Connection successful", timeout=5)
-print("Bluetooth connected!")
-
-#------------------------------------------UDP------------------------------------------
-#---------------------------------------------------------------------------------------
-
-# UDP connect to the laptop
 print( "UDP target IP:", UDP_IP)
 print( "UDP target port:", UDP_PORT)
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
-#error = sock.connect_ex((UDP_IP, UDP_PORT))
-#print("Error: ", error) 
-
-#---------------------------------------------------------------------------------------
-#---------------------------------------------------------------------------------------
 
 # function to transform hex string like "0a cd" into signed integer
 def hexStrToInt(hexstr):
@@ -144,29 +119,16 @@ def getGyro():
 	#print("Gyro: %d" % z)
 	return z
 
-prev_time = time.time()
-curr_time = 0
+start_time = time.time()
 speed = 0
 prevAngle = 0
 while True:
-	angularZ = getGyro()
-	if angularZ > 25:
-		#angle = getAngle()
-		#delta = (angle - prevAngle)%360
-		#curr_time = time.time()
-		#speed = delta/360/(curr_time - prev_time)
-		#prev_time = curr_time
-		#prevAngle = angle
-		speed = angularZ
-	else:
-		speed = 0
-	#print("Angle: %.3f Next Angle: %.3f" % (angle,next_angle))
 	roll = readBerry()
-	speed = int(speed)
-	sendText = "%d %d" % (speed, int(roll*100))
+	t = time.time()
+	sendText = "%.2f %.2f" % (roll, t-start_time)
 	print(sendText)
-	sock.sendto(sendText.encode('utf-8'),(UDP_IP, UDP_PORT))
-	time.sleep(0.3)
+	#sock.sendto(sendText.encode('utf-8'),(UDP_IP, UDP_PORT))
+	time.sleep(0.1)
 
 #print("RPS: %.3f" % speed)
 

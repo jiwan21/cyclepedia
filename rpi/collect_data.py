@@ -144,29 +144,17 @@ def getGyro():
 	#print("Gyro: %d" % z)
 	return z
 
-prev_time = time.time()
-curr_time = 0
+start_time = time.time()
 speed = 0
 prevAngle = 0
 while True:
 	angularZ = getGyro()
-	if angularZ > 25:
-		#angle = getAngle()
-		#delta = (angle - prevAngle)%360
-		#curr_time = time.time()
-		#speed = delta/360/(curr_time - prev_time)
-		#prev_time = curr_time
-		#prevAngle = angle
-		speed = angularZ
-	else:
-		speed = 0
-	#print("Angle: %.3f Next Angle: %.3f" % (angle,next_angle))
-	roll = readBerry()
-	speed = int(speed)
-	sendText = "%d %d" % (speed, int(roll*100))
+	angle = getAngle()
+	t = time.time()
+	sendText = "%d %.2f %.2f" % (angularZ, math.sin(angle), t-start_time)
 	print(sendText)
-	sock.sendto(sendText.encode('utf-8'),(UDP_IP, UDP_PORT))
-	time.sleep(0.3)
+	#sock.sendto(sendText.encode('utf-8'),(UDP_IP, UDP_PORT))
+	time.sleep(0.1)
 
 #print("RPS: %.3f" % speed)
 
