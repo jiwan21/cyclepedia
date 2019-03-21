@@ -38,7 +38,7 @@ def convertToRGB(img):
 def areaRatio(roi2):
 
    mask2 = cv2.dilate(roi2,kernel,iterations = 1)
-   contours2,hierarchy2= cv2.findContours(mask2,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+   contours2, hierarchy2= cv2.findContours(mask2,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 
    if contours2:
      cnt2 = max(contours2, key = lambda x: cv2.contourArea(x))
@@ -48,7 +48,7 @@ def areaRatio(roi2):
      arearatio2=((areahull2-areacnt2)/areacnt2)*100
      return arearatio2
    else:
-      print("max() arg is an empty sequence")
+      #print("max() arg is an empty sequence")
       return 0
 
 def generateGestureBoxes(x, y, area):
@@ -88,7 +88,7 @@ while(1):
    frame=cv2.flip(frame,1)
    height, width, channels = frame.shape
    kernel = np.ones((3,3),np.uint8)
-   
+  
    # apply background subtraction to the frame
    fgmask = fgbg.apply(frame)
 
@@ -118,14 +118,14 @@ while(1):
 
       #print("area: ", area)
 
-      if area > 270*270:
+      if area > 200*200:
         cv2.putText(frame,'move backwards',(0,150), font, 2, (0,0,255), 3, cv2.LINE_AA)
 
       #cv2.putText(frame, str(x),(100,100), font, 2, (0,0,255), 3, cv2.LINE_AA)
       #cv2.putText(frame, str(y),(300,100), font, 2, (0,0,255), 3, cv2.LINE_AA)
       
 
-      if area < 270*270 and (x > 400 and y > 50 and y < 300):
+      if area < 200*200 and (x > 400 and y > 50 and y < 300):
 
         vals = generateGestureBoxes(x, y, area)
         gestureArea = int(vals[0])
@@ -207,30 +207,20 @@ while(1):
         left = True if(roi1Val>threshold) else False
         top = True if(roi2Val>threshold) else False
         middle = True if(roi3Val>threshold) else False
-        bottom = True if(roi4Val>threshold) else False
+        #bottom = True if(roi4Val>threshold) else False
 
         if(left):
            signal="left"
         elif(top):
            signal="right"
-        elif(bottom):
-           signal="stop"
         else:
            signal="none"
            
         cv2.putText(frame,signal,(300,300), font, 2, (0,0,255), 3, cv2.LINE_AA)
-            
-        """
-        if(signal != "none"):
-                sock.sendto(str(signal) , (UDP_IP, UDP_PORT))
-                print signal
-            else:
-                if( firstNone ):
-                    sock.sendto(str(signal) , (UDP_IP, UDP_PORT))
-                    print signal
-                    firstNone = 0
-        """
-
+        print signal
+        
+        sock.sendto(str(signal) , (UDP_IP, UDP_PORT))
+        
 
    k = cv2.waitKey(5) & 0xFF
    if k == 27:
@@ -240,3 +230,4 @@ while(1):
 
 cv2.destroyAllWindows()
 cap.release()    
+
